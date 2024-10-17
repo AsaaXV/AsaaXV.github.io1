@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nirmana Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nirmana Generator</h1>
+    <form id="uploadForm" action="/upload" method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*" required />
+        <br />
+        <button type="submit">Unggah Gambar</button>
+    </form>
+
+    <p id="message"></p>
+
+    <script>
+        const form = document.getElementById('uploadForm');
+        const message = document.getElementById('message');
+
+        form.addEventListener('submit', function (e) {
+            message.textContent = 'Memproses gambar...';
+        });
+    </script>
+</body>
+</html>
